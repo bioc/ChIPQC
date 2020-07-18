@@ -264,7 +264,7 @@ sampleQC <- function(bamFile,bedFile=NULL,blklist=NULL,ChrOfInterest=NULL,GeneAn
     CovHistAll <- as.numeric(NA)     
   }
   if(!is.null(ShiftMat)){
-    ShiftsAv <- apply(ShiftMat,1,function(x)weighted.mean(x,Weights[colnames(ShiftMat)],na.rm=TRUE))
+    ShiftsAv <- apply(ShiftMat,1,function(x)weighted.mean(as.numeric(x),Weights[colnames(ShiftMat)],na.rm=TRUE))
 
   }else{
     ShiftsAv <- as.numeric(NA)
