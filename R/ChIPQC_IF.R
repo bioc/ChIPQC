@@ -4,7 +4,9 @@ ChIPQCsample = function(reads, peaks, annotation=NULL, chromosomes=NULL,
   if(missing(peaks)) peaks=NULL
   if(!missing(peaks)){
     if(!is.null(peaks)){
-      if(is.na(peaks)) peaks=NULL
+      if(length(peaks) == 1) {
+        if(is.na(peaks)) peaks=NULL
+      }
     }
   }
   if(missing(blacklist)) blacklist=NULL
@@ -222,9 +224,44 @@ ChIPQC = function(experiment, annotation, chromosomes, samples,
   }
   
   if(missing(samples)) {
+    
     message(sprintf("Computing metrics for %d samples...",length(samplelist)))
-    samples = bplapply(samplelist,doChIPQCsample,experiment,chromosomes, annotation, 
-                       mapQCth, blacklist, profileWin,fragmentLength,shifts)
+    
+    if (!requireNamespace("BiocParallel",quietly=TRUE)) {
+      stop("package BiocParallel must be installed to use this function.")
+    } else {
+      params <- BiocParallel::bpparam()
+      if(is.null(params)) {
+        BiocParallel::register(BiocParallel::SerialParam(), default=TRUE)
+      } 
+      if(is(params,"SerialParam")) {
+        message("Executing serially")
+        runparallel <- FALSE
+      } else {
+        runparallel <- TRUE   
+        if(is(params,"MulticoreParam")) {
+          message("Executing in parallel - max ",multicoreWorkers()," cores.")
+        } else {
+          if(is(params,"SnowParam")) {
+            message("Executing in parallel - max ",snowWorkers()," SNOW workers.")
+          }
+        }
+      }
+    }
+    
+    if(runparallel) {
+      samples <- suppressMessages(
+        BiocParallel::bplapply(samplelist,doChIPQCsample,experiment,
+                               chromosomes, annotation, mapQCth, 
+                               blacklist, profileWin,
+                               fragmentLength,shifts)
+      )   
+    } else {
+      samples <- BiocParallel::bplapply(samplelist,doChIPQCsample,experiment,
+                                        chromosomes, annotation, mapQCth, 
+                                        blacklist, profileWin,
+                                        fragmentLength,shifts)
+    }
     names(samples) = names(samplelist)
     errors = FALSE
     for(i in 1:length(samples)) {
@@ -267,8 +304,9 @@ ChIPQC = function(experiment, annotation, chromosomes, samples,
 }
 
 doChIPQCsample = function(sample,DBA,chromosomes, annotation, 
-                          mapQCth, blacklist, profileWin,fragmentLength,shifts) {
-  message(class(sample))
+                          mapQCth, blacklist, profileWin,
+                          fragmentLength,shifts) {
+  message(sample$bam)
   res = ChIPQCsample(reads   = sample$bam,
                      peaks   = sample$peaks,
                      chromosomes=chromosomes,annotation=annotation,
