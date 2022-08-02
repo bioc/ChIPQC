@@ -9,7 +9,7 @@ importMethodsFrom(BiocGenerics, as.data.frame, cbind,
                                 paste, rbind, rownames, sapply, strand, table,
                                 unique, xtabs)
 
-importMethodsFrom(BiocParallel, bplapply)
+#importMethodsFrom(BiocParallel, bplapply)
 
 importMethodsFrom(GenomicAlignments, readGAlignments)
 
