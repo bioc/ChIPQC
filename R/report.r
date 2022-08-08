@@ -556,7 +556,7 @@ setMethod("ChIPQCreport", "ChIPQCsample", function(object,
   }else{
     gfePlot <- NULL
   }
-  if(!is.na(ribl(object))){
+  if(!is.na(ribl(object))[1]){
     
     ggsave(plotFribl(object),filename=file.path(reportFolder,"Ribl.png"),
            limitsize=FALSE)

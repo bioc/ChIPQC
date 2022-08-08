@@ -5,14 +5,14 @@ ChIPQCsample = function(reads, peaks, annotation=NULL, chromosomes=NULL,
   if(!missing(peaks)){
     if(!is.null(peaks)){
       if(length(peaks) == 1) {
-        if(is.na(peaks)) peaks=NULL
+        if(is.na(peaks)[1]) peaks=NULL
       }
     }
   }
   if(missing(blacklist)) blacklist=NULL
   if(!missing(blacklist)){
     if(!is.null(blacklist)){
-      if(is.na(blacklist)) blacklist=NULL
+      if(is.na(blacklist)[1]) blacklist=NULL
     }
   }
   res = sampleQC(bamFile=reads, bedFile=peaks, GeneAnnotation=annotation,blklist=blacklist,ChrOfInterest=chromosomes,
@@ -182,7 +182,7 @@ ChIPQC = function(experiment, annotation, chromosomes, samples,
     meta = data.frame(t(experiment$class))
   }
   
-  if(is.na(peaks) || setNull==TRUE) {
+  if(is.na(peaks)[1] || setNull==TRUE) {
     peaks = NULL
   }
   

@@ -4,6 +4,12 @@
 
 \section{Version 1.32.1}{
  \itemize{
+  \item{Another bugfix for(is.na(peaks)) issue}
+  }
+}
+
+\section{Version 1.32.1}{
+ \itemize{
   \item{Make use of BiocParallel more robust - now a Depends}
   \item{Bugfix for(is.na(peaks)) issue}
   }
