@@ -2,6 +2,12 @@
 \title{ChIPQC News}
 \encoding{UTF-8}
 
+\section{Version 1.34.1}{
+ \itemize{
+  \item{Restore 1.33 fixes}
+  }
+}
+
 \section{Version 1.33.1}{
  \itemize{
   \item{Make use of BiocParallel more robust - now a Depends}
