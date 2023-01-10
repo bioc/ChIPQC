@@ -173,7 +173,7 @@ setMethod("QCmetrics", "ChIPQCsample", function(object){
                   "SSD",
                   "RiP%")
    blk = ribl(object)
-   if(!is.na(blk)) {
+   if(!is.na(blk)[1]) {
       names(blk) <- "RiBL%"
       blk = signif(blk/res[1]*100,3)
       res = c(res,blk)
