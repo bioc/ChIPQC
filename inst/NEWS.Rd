@@ -2,10 +2,15 @@
 \title{ChIPQC News}
 \encoding{UTF-8}
 
+\section{Version 1.35.1}{
+ \itemize{
+  \item{rollup bugfixes}
+  }
+}
+
 \section{Version 1.34.1}{
  \itemize{
   \item{Restore 1.33 fixes}
-  }
 }
 
 \section{Version 1.33.1}{
