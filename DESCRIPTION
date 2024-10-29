@@ -1,7 +1,7 @@
 Package: ChIPQC
 Type: Package
 Title: Quality metrics for ChIPseq data
-Version: 1.42.0
+Version: 1.43.0
 Author: Tom Carroll, Wei Liu, Ines de Santiago, Rory Stark
 Maintainer: Tom Carroll <tc.infomatics@gmail.com>, Rory Stark <bioconductor@starkhome.com>
 Description: Quality metrics for ChIPseq data.
