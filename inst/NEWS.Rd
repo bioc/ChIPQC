@@ -2,6 +2,39 @@
 \title{ChIPQC News}
 \encoding{UTF-8}
 
+\section{Version 1.49.1}{
+ \itemize{
+  \item{Formally deprecate \code{ChIPQCreport()} per Bioconductor
+        deprecation guidelines: the function now emits a
+        \code{.Deprecated()} warning and returns invisibly. The
+        \pkg{Nozzle.R1} CRAN package it depended on is no longer
+        available, so HTML report generation is no longer possible.
+        Per Bioconductor policy the function will be made defunct
+        in the next release cycle. The original source is preserved
+        in \code{inst/legacy/report.r} for reference. See
+        \code{?'ChIPQC-deprecated'} for replacements (QC accessor
+        methods; \code{deeptools} for visual reports).}
+  \item{Remove \pkg{Nozzle.R1} from \code{Imports:} (no longer
+        reachable from any executed code path).}
+  \item{Add \code{zzz.R} to the \code{Collate:} field (R 4.6 strict
+        Collate enforcement).}
+  \item{Reduce \code{R CMD check} NOTE noise: import \code{is} from
+        \pkg{methods}, \code{geom_point} from \pkg{ggplot2}, and
+        \code{multicoreWorkers}/\code{snowWorkers} from
+        \pkg{BiocParallel}; register the data-frame column names
+        used in \code{ggplot2::aes()} calls (\code{Sample},
+        \code{FRIP}, \code{FRIBL}, etc.) via
+        \code{utils::globalVariables()}. No behaviour change.}
+  \item{Fix \code{\\itemize} \eqn{\to} \code{\\describe} in
+        \code{man/ChIPQC.Rd} and \code{man/ChIPQCsample-class.Rd}:
+        items used \code{\\item\{label\}\{description\}} (a
+        \code{\\describe} semantic) inside an \code{\\itemize}
+        wrapper, producing roughly 40 ``Lost braces'' NOTEs. The
+        rendered output also improves (proper definition list
+        rather than malformed bullets).}
+  }
+}
+
 \section{Version 1.35.1}{
  \itemize{
   \item{rollup bugfixes}

@@ -21,7 +21,7 @@ ChIPQCsample(reads, peaks, annotation, chromosomes = NULL, mapQCth = 15,
              blacklist, profileWin = 400, fragmentLength = 125, shifts = 1:300, 
              runCrossCor = FALSE,verboseT=FALSE)
 }
-\itemize{
+\describe{
   \item{\code{reads}}{character string filename of .bam file}
   \item{\code{peaks}}{\code{\link{GRanges}} object or character string filename of peaks. If present, peak-based metrics will be computed.
 }
