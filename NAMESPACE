@@ -10,6 +10,7 @@ importMethodsFrom(BiocGenerics, as.data.frame, cbind,
                                 unique, xtabs)
 
 #importMethodsFrom(BiocParallel, bplapply)
+importFrom(BiocParallel, multicoreWorkers, snowWorkers)
 
 importMethodsFrom(GenomicAlignments, readGAlignments)
 
@@ -35,7 +36,7 @@ import(GenomicRanges)
 
 importFrom(ggplot2, aes, aes_string, element_blank, element_text,
            facet_grid, facet_wrap, geom_bar, geom_boxplot, geom_line,
-           geom_path, geom_rect, geom_tile, ggplot, ggsave, labs,
+           geom_path, geom_point, geom_rect, geom_tile, ggplot, ggsave, labs,
            scale_fill_gradient2, scale_fill_manual, theme, xlab, xlim,
            ylab, coord_cartesian)
 
@@ -45,11 +46,7 @@ importFrom(gtools, running)
 
 importFrom(IRanges, "%over%", IRanges)
 
-importFrom(methods, as, new)
-
-importFrom(Nozzle.R1, addTo, asLink, asStrong, newCustomReport,
-                      newFigure, newList, newParagraph, newSection, newSubSection,
-                      newTable, writeReport)
+importFrom(methods, as, is, new)
 
 importFrom(reshape2, melt)
 
@@ -61,8 +58,6 @@ importFrom(Rsamtools, bamFlagAsBitMatrix, BamFile, index, indexBam)
 importFrom(stats, as.formula, formula, weighted.mean)
 
 importFrom(utils, browseURL, read.delim, read.table, sessionInfo)
-
-importFrom(Nozzle.R1, IMAGE.TYPE.RASTER, PROTECTION.PUBLIC)
 
 importFrom("grDevices", "boxplot.stats")
 

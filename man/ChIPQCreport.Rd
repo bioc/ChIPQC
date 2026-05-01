@@ -62,7 +62,13 @@ reportFolder \tab directory name where plot graphics will be saved\cr
 }}
 
 \note{
-ChIPQCreport uses \code{Nozzle.R2} for generating HTML.
+\code{ChIPQCreport} is deprecated as of ChIPQC 1.48.1. The
+\code{Nozzle.R1} CRAN package it depended on for HTML report
+generation is no longer available. See
+\code{?'ChIPQC-deprecated'} for replacements (QC accessor
+methods; \code{deeptools} for visual reports). The original
+implementation is preserved at
+\code{system.file("legacy/report.r", package = "ChIPQC")}.
 }
 
 \keyword{methods}
@@ -70,17 +76,5 @@ ChIPQCreport uses \code{Nozzle.R2} for generating HTML.
 
 \seealso{
 \link{ChIPQC-package}, \link{ChIPQCexperiment}, \link{ChIPQCsample}
-}
-\examples{
-data(example_QCexperiment)
-ChIPQCreport(exampleExp,facetBy=c("Tissue","Factor"))
-#report in ChIPQCreport/Example.html
-
-data(tamoxifen_QC)
-ChIPQCreport(tamoxifen,facetBy="Tissue",colourBy="Condition")
-#report in ChIPQCreport/ChIPQC.html
-
-ChIPQCreport(tamoxifen,facetBy=c("Tissue","Condition"))
-#report in ChIPQCreport/ChIPQC.html
 }
 

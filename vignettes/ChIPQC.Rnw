@@ -40,7 +40,7 @@ Given a sample sheet \Rcode{samples}, a report can be generated in two commands.
 <<summaryExp, eval=FALSE, keep.source=TRUE>>=
 experiment = ChIPQC(samples)
 experiment
-ChIPQCreport(experiment)
+## ChIPQCreport(experiment) -- deprecated; see ?'ChIPQC-deprecated'
 @
 
 By default, the HTML report and associated figures will be written in a sub directory named \Rcode{ChIPQCreport}, with the main html file named \Rcode{ChIPQC.html}. 
@@ -54,7 +54,7 @@ QC reports can be generated for single samples. This example checks a single bam
 <<summarySamp, eval=FALSE, keep.source=TRUE>>=
 sample = ChIPQCsample("chip.bam")
 sample
-ChIPQCreport(sample)
+## ChIPQCreport(sample) -- deprecated; see ?'ChIPQC-deprecated'
 @
 
 The following examples explore this in more depth.
@@ -149,7 +149,7 @@ The final measure reports the percentage of reads that overlapped blacklisted re
 The easiest way to get a visual overview of the QC metrics for the experiment is to generate a summary HTML report. 
 This is accomplished by calling the \Rfunction{ChIPQCreport} method:
 <<ex1Report, eval=FALSE, keep.source=TRUE>>=
-ChIPQCreport(exampleExp)
+## ChIPQCreport(exampleExp) -- deprecated; see ?'ChIPQC-deprecated'
 @
 
 By default, a sub directory will be created named \Rcode{ChIPQCreport} (this is configurable using the \Rcode{reportFolder} parameter), which will contain each of the plots.
@@ -338,7 +338,7 @@ As in the previous example, a summary HTML report can be generated for this exam
 The only difference is that, in this case, the sample groups should be derived using the \Rcode{Tissue} and \Rcode{Condition} metadata values, as follows:
 
 <<tam1Report, eval=FALSE, keep.source=TRUE>>=
-ChIPQCreport(tamoxifen,facetBy=c("Tissue","Condition"))
+## ChIPQCreport(tamoxifen,facetBy=c("Tissue","Condition")) -- deprecated; see ?'ChIPQC-deprecated'
 @
 
 The resulting report is not included in this vignette due to space limitations, but you are invited to generate it yourself and have a look. It is also available for examination at \url{http://ChIPQC.starkhome.com/Reports/tamoxifen/ChIPQC.html}.
