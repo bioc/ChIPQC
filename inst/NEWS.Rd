@@ -2,6 +2,17 @@
 \title{ChIPQC News}
 \encoding{UTF-8}
 
+\section{Version 1.48.3}{
+ \itemize{
+  \item{Add package anchors to \code{\\link\{...\}} cross-references
+        that target topics in other packages
+        (\pkg{GenomicRanges}, \pkg{DiffBind}, \pkg{BiocParallel}),
+        eliminating the ``Found Rd file(s) with Rd \code{\\link\{\}}
+        targets missing package anchors'' \code{R CMD check} NOTE.
+        9 \code{man/*.Rd} files updated. No code change.}
+  }
+}
+
 \section{Version 1.48.1}{
  \itemize{
   \item{Formally deprecate \code{ChIPQCreport()} per Bioconductor

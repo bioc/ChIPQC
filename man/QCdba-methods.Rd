@@ -3,16 +3,16 @@
 \alias{QCdba}
 \alias{QCdba-methods}
 \alias{QCdba,ChIPQCexperiment-method}
-\title{Retrieve the \code{\link{DBA-object}} object associated with an experiment}
+\title{Retrieve the \code{\link[DiffBind]{DBA-object}} object associated with an experiment}
 \description{
-Retrieve the \code{\link{DBA-object}} object associated with a \code{\link{ChIPQCexperiment}} object.
+Retrieve the \code{\link[DiffBind]{DBA-object}} object associated with a \code{\link{ChIPQCexperiment}} object.
 }
 \section{Methods}{
 \describe{
 
 \item{\code{signature(object = "ChIPQCexperiment")}}{
 
-Retrieves the \code{\link{DBA-object}} object associated with a \code{\link{ChIPQCexperiment}}. This object can be used with \code{\link{DiffBind}} functions to further analyse a ChIP-seq experiment, including performing a differential binding analysis.
+Retrieves the \code{\link[DiffBind]{DBA-object}} object associated with a \code{\link{ChIPQCexperiment}}. This object can be used with \code{\link[DiffBind]{DiffBind}} functions to further analyse a ChIP-seq experiment, including performing a differential binding analysis.
 }
 }}
 \keyword{methods}
@@ -21,7 +21,7 @@ Retrieves the \code{\link{DBA-object}} object associated with a \code{\link{ChIP
 \author{Rory Stark and Thomas Carroll}
 
 \seealso{
-\link{ChIPQC-package}, \link{ChIPQCexperiment}, \link{DiffBind}, \link{dba}
+\link{ChIPQC-package}, \link{ChIPQCexperiment}, \link[DiffBind]{DiffBind}, \link[DiffBind]{dba}
 }
 \examples{
 data(tamoxifen_QC)

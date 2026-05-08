@@ -17,7 +17,7 @@ ChIPQC(experiment, annotation, chromosomes, samples,
   \item{experiment}{
 A specification of the ChIP-seq experiment to evaluate. 
 This can either be a dataframe, a filename for a .csv file, 
-or a \code{\link{DBA-object}} object as defined in the \code{\link{DiffBind}} package.
+or a \code{\link[DiffBind]{DBA-object}} object as defined in the \code{\link[DiffBind]{DiffBind}} package.
 Columns names in sample sheet may include:
 \describe{
 \item{SampleID:}{Identifier string for sample}
@@ -41,12 +41,12 @@ Columns names in sample sheet may include:
 \item{\dQuote{fp4}:}{FindPeaks v4}
 }
 \item{PeakFormat:}{string indicating format for peak files; 
-see PeakCaller and  \code{\link{dba.peakset}}}
+see PeakCaller and  \code{\link[DiffBind]{dba.peakset}}}
 \item{ScoreCol:}{column in peak files that contains peak scores}
 \item{LowerBetter:}{logical indicating that lower scores signify better peaks}
 }
 
-See the documentation for the \code{sampleSheet} parameter of \code{\link{dba}} for details.
+See the documentation for the \code{sampleSheet} parameter of \code{\link[DiffBind]{dba}} for details.
 }
 
 \item{annotation}{
@@ -70,12 +70,12 @@ Specification of which chromosomes to use for computing QC statistics. If missin
 \code{list} of \code{ChIPCsample} objects. If present, the sample objects will be taken directly from this list instead of being computed using the \code{\link{ChIPQCsample}} constructor.
 }
 \item{consensus}{
-If \code{consensus} is a \code{\link{GRanges}} object, all samples will use this peakset when computing peak-based metrics. If \code{consensus=TRUE}, a consensus peakset will be generated and used for all samples, derived by merging overlapping peaks in all provided peaksets, keeping any peaks that overlap in at least two samples To avoid this behavior, set \code{consensus=FALSE}; this will result in only supplied peaksets being used for calculation of peak-based metrics (and no peak-based metric being computed for samples with no peakset specified, such as controls).
+If \code{consensus} is a \code{\link[GenomicRanges]{GRanges}} object, all samples will use this peakset when computing peak-based metrics. If \code{consensus=TRUE}, a consensus peakset will be generated and used for all samples, derived by merging overlapping peaks in all provided peaksets, keeping any peaks that overlap in at least two samples To avoid this behavior, set \code{consensus=FALSE}; this will result in only supplied peaksets being used for calculation of peak-based metrics (and no peak-based metric being computed for samples with no peakset specified, such as controls).
 }
 
 \item{bCount}{
 if \code{TRUE}, the peak scores for all samples will be based on read counts using 
-\code{\link{dba.count}} using a consensus peakset. 
+\code{\link[DiffBind]{dba.count}} using a consensus peakset. 
 If \code{consenus} is missing, any samples (such as controls) that are not already 
 associated with a peakset will be associated with the consensus peakset 
 (if \code{consensus} is not missing, all samples will be associated with the consensus peakset). 
@@ -86,7 +86,7 @@ Note that the re-counting process may be time-consuming.
 An integer representing a mapping quality score threshold. Only reads with mapping quality scores above this threshold will be used for some statistics.
 }
 \item{blacklist}{
-A \code{\link{GRanges}} object or filename specifying a bed file containing genomic regions that should be excluded from the analysis. If missing and the \code{annotation} is \dQuote{hg19}, a default blacklist, \code{\link{blacklist_hg19}} derived from the UCSC list, will be used. No blacklist is used if this is set to NULL, or is left missing and the annotation is not \dQuote{hg19}.
+A \code{\link[GenomicRanges]{GRanges}} object or filename specifying a bed file containing genomic regions that should be excluded from the analysis. If missing and the \code{annotation} is \dQuote{hg19}, a default blacklist, \code{\link{blacklist_hg19}} derived from the UCSC list, will be used. No blacklist is used if this is set to NULL, or is left missing and the annotation is not \dQuote{hg19}.
 }
 \item{profileWin}{
 An integer indicating the width, in base pairs, of the window to be used for peak profiles. Peaks will be centered on their summits, and include half the window size upstream and half downstream of this point.
@@ -99,11 +99,11 @@ A vector of values to try when computing optimal shift sizes.
 }
 
 \item{...}{
-additional parameters passed to \code{\link{dba.count}} if \code{bCount=TRUE}.
+additional parameters passed to \code{\link[DiffBind]{dba.count}} if \code{bCount=TRUE}.
 }
 }
 \details{
-ChIPQC first constructs a new \code{\link{DBA-object}} object 
+ChIPQC first constructs a new \code{\link[DiffBind]{DBA-object}} object 
 if one is not provided. 
 Next it computes the annotation if one is not provided. 
 The main loop constructs new \code{\link{ChIPQCsample}} objects for 
@@ -115,11 +115,11 @@ A \code{\link{ChIPQCexperiment}} object.
 
 \author{Thomas Carroll and Rory Stark}
 \note{
-ChIPQC uses \code{\link{bplapply}} from the \code{\link{BiocParallel}} package to build the \code{\link{ChIPQCsample}} object in parallel, if supported. Control of the parallelization can be effected using \code{\link{BiocParallel}} functions, such as \code{\link{register}}.
+ChIPQC uses \code{\link[BiocParallel]{bplapply}} from the \code{\link[BiocParallel]{BiocParallel}} package to build the \code{\link{ChIPQCsample}} object in parallel, if supported. Control of the parallelization can be effected using \code{\link[BiocParallel]{BiocParallel}} functions, such as \code{\link[BiocParallel]{register}}.
 }
 
 \seealso{
-\link{ChIPQC-package},  \link{ChIPQCexperiment}, \link{ChIPQCsample}, \link{DiffBind}
+\link{ChIPQC-package},  \link{ChIPQCexperiment}, \link{ChIPQCsample}, \link[DiffBind]{DiffBind}
 }
 
 
