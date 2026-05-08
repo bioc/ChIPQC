@@ -1,7 +1,7 @@
 Package: ChIPQC
 Type: Package
 Title: Quality metrics for ChIPseq data
-Version: 1.49.1
+Version: 1.49.2
 Author: Tom Carroll, Wei Liu, Ines de Santiago, Rory Stark
 Maintainer: Tom Carroll <tc.infomatics@gmail.com>, Rory Stark <bioconductor@starkhome.com>
 Description: Quality metrics for ChIPseq data.
@@ -19,4 +19,3 @@ Imports: BiocGenerics (>= 0.11.3), S4Vectors (>= 0.1.0), IRanges (>= 1.99.17),
         TxDb.Rnorvegicus.UCSC.rn4.ensGene, TxDb.Celegans.UCSC.ce6.ensGene, TxDb.Dmelanogaster.UCSC.dm3.ensGene 
 Suggests: BiocStyle
 Collate: ChIPQCsample-class.R ChIPQCexperiment-class.R sampleQC.R ChIPQC_IF.R plots.r dbaplots.R utilities.R report.r zzz.R
-PackageStatus: Deprecated
