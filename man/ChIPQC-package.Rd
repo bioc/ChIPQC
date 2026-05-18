@@ -31,5 +31,5 @@ Frontiers?
 }
 
 \seealso{
-\code{ChIPQC} is designed to work closely with the \code{\link{DiffBind}} package, which provides functionality for analyzing ChIP-seq experiments, including performing differential binding analysis to identify significantly differentially bound peaks.
+\code{ChIPQC} is designed to work closely with the \code{\link[DiffBind]{DiffBind}} package, which provides functionality for analyzing ChIP-seq experiments, including performing differential binding analysis to identify significantly differentially bound peaks.
 }

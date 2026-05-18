@@ -13,7 +13,7 @@ The \code{tamoxifen_QC} example data set contains a \code{\link{ChIPQCexperiment
 
 The \code{example_QCexperiment}  data set contains a \code{\link{ChIPQCexperiment}} object named \code{exampleExp}. This data set, derived from ENCODE data, includes 6 ChIP libraries. Only data for chromosome 22 (chr22) are included.
 
-\code{blacklist_hg19} data set includes a \code{\link{GRanges}} object named \code{blacklist_hg19} containing blacklisted regions for the human genome, derived from the UCSC blacklist.
+\code{blacklist_hg19} data set includes a \code{\link[GenomicRanges]{GRanges}} object named \code{blacklist_hg19} containing blacklisted regions for the human genome, derived from the UCSC blacklist.
 }
 \usage{
 data(tamoxifen_QC)
@@ -21,11 +21,11 @@ data(example_QCexperiment)
 data(blacklist_hg19)
 }
 \format{
-\code{tamoxifen_QC}: A single \code{\link{ChIPQCexperiment}} object named \code{tamoxifen} is loaded. This object is used for the \code{\link{ChIPQC-package}} examples and vignette. This object can also be used with the \code{\link{DiffBind}} package (see related data objects \code{\link{tamoxifen}}).
+\code{tamoxifen_QC}: A single \code{\link{ChIPQCexperiment}} object named \code{tamoxifen} is loaded. This object is used for the \code{\link{ChIPQC-package}} examples and vignette. This object can also be used with the \code{\link[DiffBind]{DiffBind}} package (see related data objects \code{\link{tamoxifen}}).
 
 \code{example_QCexperiment}: A single \code{\link{ChIPQCexperiment}} object named \code{exampleExp} is loaded. This object is used for the \code{\link{ChIPQC-package}} examples and vignette.
 
-\code{blacklist_hg19}: A single \code{\link{GRanges}} object named \code{blacklist.hg19} that is used by default when processing hg19 data sets.
+\code{blacklist_hg19}: A single \code{\link[GenomicRanges]{GRanges}} object named \code{blacklist.hg19} that is used by default when processing hg19 data sets.
 }
 
 \source{

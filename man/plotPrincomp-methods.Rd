@@ -15,21 +15,21 @@ Generate principal components analysis plot for ChIP samples.
 Generate principal components analysis plot, for all the samples in an experiment that are associated with a peakset.
 \tabular{ll}{
 attributes \tab character string, or vector of character strings, representing metadata field names, for use grouping samples by color.\cr
-... \tab additional parameters passed to \code{\link{dba.plotPCA}}\cr
+... \tab additional parameters passed to \code{\link[DiffBind]{dba.plotPCA}}\cr
 }
 }
 }
 }
 
 \note{
-plotPrincomp uses \code{\link{dba.plotPCA}} for plotting.
+plotPrincomp uses \code{\link[DiffBind]{dba.plotPCA}} for plotting.
 }
 
 \keyword{methods}
 \author{Rory Stark and Thomas Carroll}
 
 \seealso{
-\link{ChIPQC-package}, \link{ChIPQCexperiment}, \link{dba.plotPCA}
+\link{ChIPQC-package}, \link{ChIPQCexperiment}, \link[DiffBind]{dba.plotPCA}
 }
 \examples{
 data(tamoxifen_QC)

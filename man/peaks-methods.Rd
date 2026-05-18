@@ -13,15 +13,15 @@ Retrieve peaks.
 \describe{
 
 \item{\code{signature(object = "ChIPQCexperiment")}}{
-Retrieve a \code{\link{GRangesList}} of the peaks associated with all the samples in an experiment.
+Retrieve a \code{\link[GenomicRanges]{GRangesList}} of the peaks associated with all the samples in an experiment.
 }
 
 \item{\code{signature(object = "list")}}{
-Retrieve a \code{\link{GRangesList}} of the peaks associated with all the samples in a list of ChIPQCsample objects.
+Retrieve a \code{\link[GenomicRanges]{GRangesList}} of the peaks associated with all the samples in a list of ChIPQCsample objects.
 }
 
 \item{\code{signature(object = "ChIPQCsample")}}{
-Retrieve a \code{\link{GRanges}} object containing the peaks associated with a sample.
+Retrieve a \code{\link[GenomicRanges]{GRanges}} object containing the peaks associated with a sample.
 }
 }}
 

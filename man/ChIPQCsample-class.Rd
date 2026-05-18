@@ -23,7 +23,7 @@ ChIPQCsample(reads, peaks, annotation, chromosomes = NULL, mapQCth = 15,
 }
 \describe{
   \item{\code{reads}}{character string filename of .bam file}
-  \item{\code{peaks}}{\code{\link{GRanges}} object or character string filename of peaks. If present, peak-based metrics will be computed.
+  \item{\code{peaks}}{\code{\link[GenomicRanges]{GRanges}} object or character string filename of peaks. If present, peak-based metrics will be computed.
 }
 
 \item{\code{annotation}}{
@@ -51,7 +51,7 @@ Specification of which chromosomes to use for computing QC statistics. If missin
 An integer representing a mapping quality score threshold. Only reads with mapping quality scores above this threshold will be used for some statistics.
 }
   \item{\code{blacklist}}{
-A \code{\link{GRanges}} object or filename specifying a bed file containing genomic regions that should be excluded from the analysis. If missing and the \code{annotation} is \dQuote{hg19}, a default blacklist, \code{\link{blacklist_hg19}} derived from the UCSC list, will be used. No blacklist is used if this is set to NULL, or is left missing and the annotation is not \dQuote{hg19}.
+A \code{\link[GenomicRanges]{GRanges}} object or filename specifying a bed file containing genomic regions that should be excluded from the analysis. If missing and the \code{annotation} is \dQuote{hg19}, a default blacklist, \code{\link{blacklist_hg19}} derived from the UCSC list, will be used. No blacklist is used if this is set to NULL, or is left missing and the annotation is not \dQuote{hg19}.
 }
   \item{\code{profileWin}}{
 An integer indicating the width, in base pairs, of the window to be used for peak profiles. Peaks will be centered on their summits, and include half the window size upstream and half downstream of this point.
